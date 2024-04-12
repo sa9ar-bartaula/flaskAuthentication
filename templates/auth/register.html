@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %} FLASKAPP | Register {% endblock title %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <div class="card">
+                <div class="card-header">Registration Form</div>
+                <div class="card-body">
+                    <form method="POST">
+                        <h6 class="mb-3">Please fill up the fields.</h6>
+                        <div class="row">
+                            <div class="col-md-6 col-12 mb-2">
+                                <label class="mb-1">First Name*</label>
+                                <input type="text" name="first_name" id="id_first_name" class="form-control" required />
+                            </div>
+                            <div class="col-md-6 col-12 mb-2">
+                                <label class="mb-1">Last Name*</label>
+                                <input type="text" name="last_name" id="id_last_name" class="form-control" required />
+                            </div>
+                            <div class="col-md-6 col-12 mb-2">
+                                <label class="mb-1">username*</label>
+                                <input type="text" name="username" id="id_username" class="form-control" required />
+                            </div>
+                            <div class="col-md-6 col-12 mb-2">
+                                <label class="mb-1">Email Address*</label>
+                                <input type="email" name="email" id="id_email" class="form-control" required />
+                            </div>
+                            <div class="col-md-6 col-12 mb-2">
+                                <label class="mb-1">Password*</label>
+                                <input type="password" name="password1" id="id_password1" class="form-control" required />
+                            </div>
+                            <div class="col-md-6 col-12 mb-2">
+                                <label class="mb-1">Password Confirmation*</label>
+                                <input type="password" name="password2" id="id_password2" class="form-control" required />
+                            </div>
+                            <div class="fw-bold mb-2" id="password-strength"></div>
+                            <div class="col-12 mb-2">
+                                <ul>
+                                    <small class="text-muted">
+                                        <li>Your password must contain at least 8 characters.</li>
+                                        <li>Your password can&rsquo;t be a commonly used password.</li>
+                                        <li>Your password can&rsquo;t be entirely numeric.</li>
+                                    </small>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <button type="submit" class="btn btn-primary w-50 mx-auto">Sign up</button>
+                        </div>
+                        <div class="text-center mt-1">
+                            Already have an account? {# <a href="{% url 'login_url' %}" class="text-primary ps-2">Login Here.</a> #}
+                        </div>
+
+                        {% if error %}
+                            <div class="text-danger text-start mt-1"><span class="text-center">ERROR !!!</span> {{error}} </div>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

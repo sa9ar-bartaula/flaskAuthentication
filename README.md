@@ -1,2 +1,2 @@
-# flaskAuthentication
-User authentication system with flask framework.
+### Flask Authentication System
+`Authenticate users through flask framework.`
